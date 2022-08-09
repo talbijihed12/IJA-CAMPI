@@ -1,0 +1,119 @@
+{% extends 'baseback2.html.twig' %}
+
+
+{% block body %}
+<br>
+<h2 style="color: steelblue; text-align: center"> Gestion Transport</h1>
+<br>
+<br>
+
+    <div class="text-right">
+        <a href="{{ path('app_moyen_transport_new') }}" class="btn btn-primary">Ajouter Transport</a>
+        <a href="{{ path('app_reservation_moyen_transport_calendar') }}" class="btn btn-primary">Calendrier</a>
+    </div>
+
+    <input type="text" id="search" class="form-control"
+placeholder="Search"><br>
+<div>
+
+
+    <table class="table" id="t">
+        <thead>
+            <tr>
+                <th style="color: steelblue; text-align: center">Type</th>
+                <th style="color: steelblue; text-align: center">Matricule</th>
+                <th style="color: steelblue; text-align: center">Marque</th>
+                <th style="color: steelblue; text-align: center">Nombre de Places</th>
+                <th style="color: steelblue; text-align: center">Frais</th>
+                <th style="color: steelblue; text-align: center"></th>
+            </tr>
+        </thead>
+        <tbody id="all">
+        {% for moyen_transport in moyen_transports %}
+            <tr>
+                
+                <td style="text-align: center">{{ moyen_transport.type }}</td>
+                <td style="text-align: center">{{ moyen_transport.matricule }}</td>
+                <td style="text-align: center">{{ moyen_transport.marque }}</td>
+                <td style="text-align: center">{{ moyen_transport.nbrPlace }}</td>
+                <td style="text-align: center">{{ moyen_transport.frais }}</td>
+                <td>
+                    <a href="{{ path('app_moyen_transport_show', {'idTransport': moyen_transport.idTransport}) }}" class="btn btn-secondary">Afficher</a>
+                    <a href="{{ path('app_moyen_transport_edit', {'idTransport': moyen_transport.idTransport}) }}" class="btn btn-secondary">Modifier</a>
+                    <form method="post" action="{{ path('app_moyen_transport_delete', {'idTransport': moyen_transport.idTransport}) }}" style="display: inline-block" onsubmit="return confirm('Vous Êtes sûr de Supprimer ce Moyen Transport ');">
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ moyen_transport.idTransport) }}">
+                       <button class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Table Moyen Transport vide..!!</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+       
+    </table>
+    
+    <div class="navigation">
+        {{ knp_pagination_render(moyen_transports) }}
+    </div>
+    
+    <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+
+<script>
+$(document).ready(function(){
+$("#search").keyup(function(){
+/* La variable value va prendre la valeur insérer dans le
+champ de texte
+afin d’effectuer la recherche */
+var value = $(this).val();
+console.log("value : ")
+/* Ajax est lancé lors du remplissage du champ texte dont
+l’id est
+« search » pour faire la recherche */
+$.ajax({
+/* l’url est une chaine de caractères contenant
+l’adresse où la requête est
+6
+envoyée */
+url : "{{ path('searchMoyen') }}",
+/* La méthode utilisée pour transférer les données est
+GET */
+type : 'GET',
+/*Ici search value va prendre la chaine entrée par un
+utilisateur dans la
+zone de recherche et sera placée après l’url */
+data: {
+'searchValue' : value
+},
+/*Cette fonction permet de vider le contenu du tableau
+pour recevoir le
+nouveau contenu*/
+success : function(retour){
+if(retour){
+$('#t #searchtab').empty();
+$.each(JSON.parse(retour), function(i, obj) {
+$('#t tbody#all').hide();
+$('#t tbody#searchtab').append('<tr><td>
+$('#t tbody#searchtab').append('<tr><td>
+'+obj.id+'</td><td> '+obj.type+' </td><td>'+obj.idTransport+ '</td><td><a
+});
+}
+else
+{
+$('#t tbody#all').show();
+$('#t tbody#searchtab').empty();
+$('#t tbody#searchtab').fadeIn('fast');
+}
+},
+});
+return false;
+});
+});
+</script>
+
+
+{% endblock %}

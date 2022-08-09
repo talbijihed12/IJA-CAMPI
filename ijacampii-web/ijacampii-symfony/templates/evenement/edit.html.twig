@@ -1,0 +1,33 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}Modifier un  Evenement{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {{ form_start(form,{attr:{'novalidate':'novalidate'}}) }}
+    <h1>Edit Evenement</h1>
+    {{ form_widget(form)}}
+
+
+    <div >{{ include('evenement/_form.html.twig', {'button_label': 'Update'}) }}</div>
+
+    <a href="{{ path('app_evenement_index') }}"><button style="display: inline-block" data-bs-dismiss="modal" type="submit"
+                                                        class="btn btn-primary">Back to list</button></a>
+
+
+    <div style="display: inline-block">{{ include('evenement/_delete_form.html.twig') }}</div>
+    <script type="text/javascript">
+        var vsid = "kc24347452b1f83";
+        (function() {
+            var vsjs = document.createElement('script'); vsjs.type = 'text/javascript'; vsjs.async = true; vsjs.setAttribute('defer', 'defer');
+            vsjs.src = 'https://www.leadchatbot.com/vsa/chat.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vsjs, s);
+        })();
+    </script>
+
+{% endblock %}

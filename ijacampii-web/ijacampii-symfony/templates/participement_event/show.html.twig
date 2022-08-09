@@ -1,0 +1,27 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}ParticipementEvent{% endblock %}
+
+{% block body %}
+    <h1>ParticipementEvent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdParticipement</th>
+                <td>{{ participement_event.idParticipement }}</td>
+            </tr>
+            <tr>
+                <th>NbrParticipement</th>
+                <td>{{ participement_event.nbrParticipement }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="wrapper2">
+    <a href="{{ path('app_participement_event_index') }}"><button data-bs-dismiss="modal" type="submit"
+                                                                  class="btn btn-primary">Back to list</button></a></a>
+
+
+    {{ include('participement_event/_delete_form.html.twig') }}
+</div>
+{% endblock %}

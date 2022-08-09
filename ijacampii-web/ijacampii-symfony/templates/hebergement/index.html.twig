@@ -1,0 +1,49 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Les Hebergement{% endblock %}
+
+{% block body %}
+    <h1>Les Hebergement</h1>
+<input type="text" id="search" class="form-control form-control-no-border mr-sm-2" placeholder="chercher commande">
+    <table class="table" id="tableac" name="tableac">
+        <thead>
+            <tr>
+                <th>IdH</th>
+                <th>Name</th>
+                <th>Ville</th>
+                <th>Categorie</th>
+                <th>Capacite</th>
+                <th>Disponibilite</th>
+                <th>Prix</th>
+                <th>IdUser</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.idH }}</td>
+                <td>{{ article.name }}</td>
+                <td>{{ article.ville }}</td>
+                <td>{{ article.categorie }}</td>
+                <td>{{ article.capacite }}</td>
+                <td>{{ article.disponibilite ? 'Yes' : 'No' }}</td>
+                <td>{{ article.prix }}</td>
+                <td>{{ article.idUser }}</td>
+                
+                <td>
+                    <a href="{{ path('app_hebergement_show', {'idH': article.idH}) }}" class="btn btn-secondary">Afficher</a>
+                    <a href="{{ path('app_reservationsimple_new', {'idH': article.idH}) }}" class="btn btn-secondary">Reserver</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        {{ knp_pagination_render(articles) }}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hebergement_new') }}">Create new</a>
+    
+{% endblock %}

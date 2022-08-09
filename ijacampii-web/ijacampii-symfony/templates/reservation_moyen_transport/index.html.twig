@@ -1,0 +1,45 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+
+<br>
+<h4 style="font-size: 2.4rem; font-weight: 100px; color: steelblue; text-align: center"> Réservations Moyen Transport</h4>
+<br>
+<br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th style="color: steelblue; text-align: center">Date Debut</th>
+                <th style="color: steelblue; text-align: center">Date Fin</th>
+                <th style="color: steelblue; text-align: center">Place</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation_moyen_transport in reservation_moyen_transports %}
+            <tr>
+            
+                <td style="text-align: center">{{ reservation_moyen_transport.dateDebut ? reservation_moyen_transport.dateDebut|date('Y-m-d') : '' }}</td>
+                <td style="text-align: center">{{ reservation_moyen_transport.dateFin ? reservation_moyen_transport.dateFin|date('Y-m-d') : '' }}</td>
+                <td style="text-align: center">{{ reservation_moyen_transport.place }}</td>
+                <td>
+                    <a href="{{ path('app_reservation_moyen_transport_show', {'idReservation': reservation_moyen_transport.idReservation}) }}" class="btn btn-secondary" >Afficher</a>
+                    <form method="post" action="{{ path('app_reservation_moyen_transport_delete', {'idReservation': reservation_moyen_transport.idReservation}) }}" style="display: inline-block" onsubmit="return confirm('Vous Êtes sûr de réfiser cette Réservation? ');">
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reservation_moyen_transport.idReservation) }}">
+                       <button class="btn btn-danger">Refuser</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

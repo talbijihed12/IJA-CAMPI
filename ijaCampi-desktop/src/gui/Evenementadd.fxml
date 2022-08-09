@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="709.0" prefWidth="1351.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EvenementaddController">
+    <children>
+      <BorderPane prefHeight="709.0" prefWidth="1351.0">
+         <left>
+            <VBox style="-fx-background-color: #1B1B1B;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="button" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#Acceuil" prefHeight="37.0" prefWidth="305.0" stylesheets="@styling.css" text="Acceuil" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_home_page_30px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="button1" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#loadGestionE" prefHeight="35.0" prefWidth="305.0" stylesheets="@styling.css" text="Gestion des evenements" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/event%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="button2" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#GestionParticipation" prefHeight="37.0" prefWidth="305.0" stylesheets="@styling.css" text="Gestion des participants" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#transport" prefHeight="33.0" prefWidth="305.0" stylesheets="@styling.css" text="Transport" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport1" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#gestionmoyentransport" prefHeight="34.0" prefWidth="305.0" stylesheets="@styling.css" text="Gestion moyen de transport" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport11" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onMouseClicked="#gestionreservation" prefHeight="40.0" prefWidth="305.0" stylesheets="@styling.css" text="Gestion Réservation" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#storeee" prefHeight="36.0" prefWidth="305.0" stylesheets="@styling.css" text="Store" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport1111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="394.0" mnemonicParsing="false" onMouseClicked="#gestionequipement" prefHeight="36.0" prefWidth="305.0" stylesheets="@styling.css" text="Gestion Equipement" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport11111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="458.0" mnemonicParsing="false" onMouseClicked="#gestioncommande" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Gestion Commande" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#avis" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Avis" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport1111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#traiterrec" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Traitement des réclamations" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport11111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#traiterrec" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Traitement des réclamations" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport111111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#traiterrec" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Traitement des réclamations" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport1111111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#traiterrec" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Traitement des réclamations" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport11111111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#traiterrec" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Traitement des réclamations" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport111111111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#traiterrec" prefHeight="39.0" prefWidth="305.0" stylesheets="@styling.css" text="Traitement des réclamations" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="transport1111111111111" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="571.0" mnemonicParsing="false" onMouseClicked="#reclamerrr" prefHeight="39.0" prefWidth="129.0" stylesheets="@styling.css" text="Réclamer" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_user_groups_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="58.0" prefWidth="1054.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@icons/Logo-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <Pane fx:id="pane" prefHeight="650.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
+               <children>
+                    <TextField fx:id="filterField" layoutX="438.0" layoutY="45.0" onKeyTyped="#recherche" prefHeight="25.0" prefWidth="261.0" />
+                    <Button layoutX="233.0" layoutY="585.0" mnemonicParsing="false" onAction="#Edit" prefHeight="25.0" prefWidth="74.0" text="Modifier" />
+                    <TextField fx:id="ddd" />
+                    <Button layoutX="149.0" layoutY="585.0" mnemonicParsing="false" onAction="#supprimerEvent" prefHeight="25.0" prefWidth="74.0" text="Supprimer" />
+                    <Line endX="100.0" endY="352.0" layoutX="290.0" layoutY="273.0" startX="100.0" startY="-236.0" />
+                    <DatePicker fx:id="DD" layoutX="174.0" layoutY="361.0" />
+                    <DatePicker fx:id="DF" layoutX="174.0" layoutY="409.0" />
+                    <ComboBox fx:id="EQ" layoutX="175.0" layoutY="159.0" prefWidth="150.0" />
+                    <TextArea fx:id="DESC" layoutX="176.0" layoutY="208.0" prefHeight="133.0" prefWidth="200.0" />
+                    <Button layoutX="313.0" layoutY="585.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="74.0" text="Ajouter" />
+                    <TextField fx:id="user" />
+                    <TextField fx:id="NE" layoutX="174.0" layoutY="37.0" />
+                    <TextField fx:id="NB" layoutX="176.0" layoutY="459.0" />
+                    <TextField fx:id="activite" layoutX="176.0" layoutY="548.0" />
+                    <TextField fx:id="prix" layoutX="176.0" layoutY="503.0" />
+                    <ComboBox fx:id="tr" layoutX="175.0" layoutY="82.0" prefWidth="150.0" />
+                    <ComboBox fx:id="hb" layoutX="175.0" layoutY="120.0" prefWidth="150.0" />
+                  <Text layoutX="43.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activités" />
+                  <Text layoutX="43.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                  <Text layoutX="42.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres Réservations" />
+                  <Text layoutX="42.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fin d'événement" />
+                  <Text layoutX="40.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Début d'événement" />
+                  <Text layoutX="38.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                  <Text layoutX="34.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipement" />
+                  <Text layoutX="34.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+                  <Text layoutX="32.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moyen de transport" />
+                  <Text layoutX="30.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom d'événement" />
+                    <TableView fx:id="RECl" layoutX="438.0" layoutY="95.0" onMouseClicked="#getSelected" prefHeight="492.0" prefWidth="529.0">
+                        <columns>
+                            <TableColumn fx:id="nom" prefWidth="75.0" text="Event" />
+                            <TableColumn fx:id="dd" prefWidth="75.0" text="date debut" />
+                            <TableColumn fx:id="df" prefWidth="75.0" text="date fin" />
+                            <TableColumn fx:id="desc" prefWidth="75.0" text="description" />
+                            <TableColumn fx:id="nbrR" prefWidth="79.0" text="nombre réservation" />
+                            <TableColumn fx:id="heb" minWidth="0.0" prefWidth="71.0" text="id_hebergement" visible="false" />
+                            <TableColumn fx:id="tra" prefWidth="75.0" text="id_transport" visible="false" />
+                            <TableColumn fx:id="equip" prefWidth="75.0" text="id_equipement" visible="false" />
+                            <TableColumn fx:id="cprix" prefWidth="81.0" text="prix" />
+                            <TableColumn fx:id="cactivite" prefWidth="69.0" text="activité" />
+                            <TableColumn fx:id="idU" prefWidth="75.0" text="id_utilisateur" visible="false" />
+                            <TableColumn fx:id="df1" prefWidth="75.0" text="date fin" visible="false" />
+                            <TableColumn fx:id="idddd" prefWidth="75.0" text="date fin" visible="false" />
+                        </columns>
+                    </TableView>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+        <Text layoutX="48.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" visible="false" />
+    </children>
+</AnchorPane>

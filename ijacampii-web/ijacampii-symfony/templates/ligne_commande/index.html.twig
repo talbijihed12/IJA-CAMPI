@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LigneCommande index{% endblock %}
+
+{% block body %}
+    <h1>LigneCommande index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantite</th>
+                <th>equipement</th>
+                <th>commande</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ligne_commande in ligne_commandes %}
+            <tr>
+                <td>{{ ligne_commande.id }}</td>
+                <td>{{ ligne_commande.quantite }}</td>
+                <td>{{ ligne_commande.IdEquipement }}</td>
+                <td>{{ ligne_commande.idCommande }}</td>
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

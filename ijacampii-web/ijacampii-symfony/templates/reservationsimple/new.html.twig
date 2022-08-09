@@ -1,0 +1,11 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}New Reservationsimple{% endblock %}
+
+{% block content %}
+    <h1>Create new Reservationsimple </h1>
+    
+    {{ include('reservationsimple/_form.html.twig') }}
+    
+    <a href="{{ path('app_reservationsimple_index') }}">back to list</a>
+{% endblock %}

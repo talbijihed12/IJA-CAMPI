@@ -1,0 +1,52 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Les Hebergement{% endblock %}
+
+{% block content %}
+    <h1>Les Hebergement</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdH</th>
+                <th>Name</th>
+                <th>Ville</th>
+                <th>Categorie</th>
+                <th>Capacite</th>
+                <th>Disponibilite</th>
+                <th>Prix</th>
+                <th>IdUser</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hebergement in hebergements %}
+            <tr>
+                <td>{{ hebergement.idH }}</td>
+                <td>{{ hebergement.name }}</td>
+                <td>{{ hebergement.ville }}</td>
+                <td>{{ hebergement.categorie }}</td>
+                <td>{{ hebergement.capacite }}</td>
+                <td>{{ hebergement.disponibilite ? 'Yes' : 'No' }}</td>
+                <td>{{ hebergement.prix }}</td>
+                <td>{{ hebergement.idUser }}</td>
+                
+                <td>
+                    <a href="{{ path('app_hebergement_show', {'idH': hebergement.idH}) }}" class="btn btn-secondary" >Afficher</a>
+                    <a href="{{ path('app_hebergement_edit', {'idH': hebergement.idH}) }}" class="btn btn-secondary">Modifier</a>
+                    <form method="post" action="{{ path('app_hebergement_delete', {'idH': hebergement.idH}) }}" style="display: inline-block" onsubmit="return confirm('Vous Êtes sûr de Supprimer cet Hebergement ');">
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ hebergement.idH) }}">
+                       <button class="btn btn-danger">Delete</button>
+                    </form>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hebergement_new') }}">Create new</a>
+{% endblock %}

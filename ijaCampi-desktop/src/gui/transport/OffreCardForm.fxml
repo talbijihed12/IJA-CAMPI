@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMousePressed="#click" prefHeight="215.0" prefWidth="225.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.transport.OffreCardFormController">
+    <stylesheets>
+        <URL value="@offrecardform.css" />
+    </stylesheets>
+    
+    <children>
+      <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="225.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="48.0" prefWidth="225.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/offre_Locaaala-removebg-preview.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="34.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="191.0">
+               <children>
+                  <Label fx:id="lbtype" prefHeight="49.0" prefWidth="97.0" text="Type">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lbfrais" prefHeight="49.0" prefWidth="120.0" text="Frais" textFill="#488049">
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" top="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="30.0" layoutY="30.0" prefHeight="30.0" prefWidth="201.0">
+               <children>
+                  <Label fx:id="lbmatricule" prefHeight="49.0" prefWidth="123.0" text="Matricule">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="34.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="81.0" prefHeight="34.0" prefWidth="202.0">
+               <children>
+                  <Label fx:id="lbmarque" prefHeight="49.0" prefWidth="137.0" text="Marque">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="34.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="103.0" prefHeight="32.0" prefWidth="208.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="130.0" text="Nombre de Places : ">
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lbnbrplace" prefHeight="32.0" prefWidth="65.0" text="nbr">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="23.0" prefWidth="225.0">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@images/Transpooortttt-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="fruit-item" />
+      <String fx:value="shadow" />
+   </styleClass>
+    
+    
+</AnchorPane>

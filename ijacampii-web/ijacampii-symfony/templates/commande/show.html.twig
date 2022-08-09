@@ -1,0 +1,157 @@
+{{ block("css", "baseback2.html.twig") }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    function generatePDF() {
+        // Choose the element that our invoice is rendered in.
+        const element = document.getElementById('invoice');
+        // Choose the element and save the PDF for our user.
+        html2pdf().from(element).save();
+    }
+</script>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Commande</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Commande</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!------------->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="callout callout-info">
+                        <h5><i class="fas fa-info"></i> Note:</h5>
+                        This page has been enhanced for printing. Click the print button at the bottom of the invoice to
+                        test.
+                    </div>
+
+                    <div id="invoice">
+                    <!-- Main content -->
+                    <div class="invoice p-3 mb-3">
+                        <!-- title row -->
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i class="fas fa-globe"></i> Ija campi Inc.
+                                    <small class="float-right">Date: {{ commande.date ? commande.date|date('Y-m-d') : '' }}</small>
+                                </h4>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- info row -->
+                        <div class="row invoice-info">
+                            <div class="col-sm-4 invoice-col">
+
+                                <address>
+                                    <strong>Adresse</strong><br>
+                                    {{ commande.adresse }}
+                                </address>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-4 invoice-col">
+                                <b> Cient</b>
+                                <address>
+                                    {{ commande.idUtilisateur }}
+                                </address>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-4 invoice-col">
+                                <b>Commande N# {{ commande.reference }}</b><br>
+                                <br>
+                                <b></b> <br>
+
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+
+                        <!-- Table row -->
+                        <div class="row">
+                            <div class="col-12 table-responsive">
+
+
+                                <a class="btn btn-primary btn-sm"
+                                   href="{{ path('cart_show_commande',{'id': commande.id}) }}">
+
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    View ligne commande
+                                </a>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <!-- accepted payments column -->
+                            <div class="col-6">
+                                <p class="lead">Payment Methods:</p>
+                                <img src="../../dist/img/credit/visa.png" alt="Visa">
+                                <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
+                                <img src="../../dist/img/credit/american-express.png" alt="American Express">
+                                <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
+
+                                <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya
+                                    handango imeem
+                                    plugg
+                                    dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                                </p>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-6">
+                                <p class="lead">{{ commande.date ? commande.date|date('Y-m-d') : '' }}</p>
+
+                                <div class="table-responsive">
+                                    <table class="table">
+
+                                        <tr>
+                                            <th>Total:</th>
+                                            <td>{{ commande.montant }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    </div>
+                    <!-- this row will not appear when printing -->
+                    <div class="row no-print">
+                        <div class="col-12">
+                            <a hidden href="{{ path('app_commande_topdf',{'id': commande.id}) }}" rel="noopener" target="_blank" class="btn btn-default"><i
+                                        class="fas fa-print"></i> Print</a>
+                            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i>
+                                Submit
+                                Payment
+                            </button>
+                            <button onclick="generatePDF()" type="button" class="btn btn-primary float-right" style="margin-right: 5px;" href="">
+                                <i class="fas fa-download"></i> Generate PDF
+                            </button>
+                            </div>
+                    </div>
+                </div>
+                <!-- /.invoice -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+

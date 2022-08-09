@@ -1,0 +1,54 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block body %}
+    <h1>Utilisateurs</h1>
+
+    <table class="table">
+        <tbody>
+            
+            <tr>
+                <th>Nom</th>
+                <td>{{ utilisateur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ utilisateur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>DateNaissance</th>
+                <td>{{ utilisateur.dateNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ utilisateur.adresse }}</td>
+            </tr>
+            <tr>
+                <th>NumTel</th>
+                <td>{{ utilisateur.numTel }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ utilisateur.login }}</td>
+            </tr>
+             <tr>
+                <th>Role</th>
+                <td>{{ utilisateur.role }}</td>
+            </tr>
+            <tr>
+               
+            
+        <td>
+        
+                    <form method="post" action="{{ path('app_utilisateurs_delete', {'idUser': utilisateur.idUser}) }}" style="display: inline-block" onsubmit="return confirm('Vous Êtes sûr de réfiser cette Réservation? ');">
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ utilisateur.idUser) }}">
+                       <button class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+ </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Hebergement{% endblock %}
+
+{% block content %}
+    <h1>Hebergement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdH</th>
+                <td>{{ hebergement.idH }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ hebergement.name }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ hebergement.ville }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ hebergement.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Capacite</th>
+                <td>{{ hebergement.capacite }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ hebergement.disponibilite ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ hebergement.prix }}</td>
+            </tr>
+            <tr>
+                <th>IdUser</th>
+                <td>{{ hebergement.idUser }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hebergement_index') }}">back to list</a>
+
+    <a href="{{ path('app_hebergement_edit', {'idH': hebergement.idH}) }}">edit</a>
+     <a href="{{ path('app_reservationsimple_new', {'idH': hebergement.idH}) }}" class="btn btn-secondary">Reserver</a>
+    {{ include('hebergement/_delete_form.html.twig') }}
+{% endblock %}

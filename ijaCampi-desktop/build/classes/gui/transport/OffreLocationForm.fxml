@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #666769;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.transport.OffreLocationFormController">
+   <children>
+      <AnchorPane layoutX="215.0" layoutY="120.0" prefHeight="552.0" prefWidth="945.0" style="-fx-background-color: #E9EEF7;">
+         <children>
+            <HBox layoutX="198.0" layoutY="136.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="198.0">
+               <children>
+                  <Label fx:id="lbdatedebut" text="Date Début">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfdatedebut" prefHeight="25.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets left="158.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="198.0" layoutY="176.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="198.0">
+               <children>
+                  <Label fx:id="lbdatefin" text="Date Fin">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfdatefin" prefHeight="25.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets left="182.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TextField fx:id="tfId" layoutX="38.0" layoutY="76.0" prefHeight="25.0" prefWidth="36.0" />
+            <Button fx:id="btnreserver" layoutX="454.0" layoutY="285.0" mnemonicParsing="false" onAction="#reserver" prefHeight="40.0" prefWidth="96.0" text="Réserver" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="tfrechercher" alignment="CENTER" layoutX="429.0" layoutY="57.0" onKeyTyped="#rechercher" prefHeight="29.0" prefWidth="268.0" promptText="Rechercher" />
+      <Button fx:id="btrechercher" layoutX="697.0" layoutY="51.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="54.0" styleClass="transparent" stylesheets="@css/style.css">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/icons8-search-60.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

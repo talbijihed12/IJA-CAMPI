@@ -1,0 +1,19 @@
+
+{{ form_start(form, {attr:{novalidate:'novalidate'}}) }}
+<div class="row">
+    <div class="col-md-4">{{ form_row(form.dateDebut)}}</div>
+    <div class="col-md-4">{{ form_row(form.dateFin)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-4">{{ form_row(form.place)}}</div>
+    <div class="col-md-4">{{ form_row(form.idTransport)}}</div>
+    <div class="col-md-4" hidden>{{ form_row(form.idUser)}}</div>
+</div>
+<div class="row">
+    <div class="form-group mb-2">{{ form_row(form.captchaCode)}}</div>
+</div>
+{{form_widget(form)}}
+<button class="btn btn-primary">{{button | default('Réserver')}}</button>
+{{ form_end(form) }}
+</div>
+

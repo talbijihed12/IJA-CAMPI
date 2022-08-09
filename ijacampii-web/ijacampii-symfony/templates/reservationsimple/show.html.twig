@@ -1,0 +1,38 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Reservationsimple{% endblock %}
+
+{% block content %}
+    <h1>Reservationsimple</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdRs</th>
+                <td>{{ reservationsimple.idRs }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{{ reservationsimple.datedebut ? reservationsimple.datedebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ reservationsimple.datefin ? reservationsimple.datefin|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Namehebergement</th>
+                <td>{{ reservationsimple.namehebergement }}</td>
+            </tr>
+            <tr>
+                <th>UserId</th>
+                <td>{{ reservationsimple.userId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservationsimple_index') }}">back to list</a>
+
+    <a href="{{ path('app_reservationsimple_edit', {'idRs': reservationsimple.idRs}) }}">edit</a>
+
+    {{ include('reservationsimple/_delete_form.html.twig') }}
+{% endblock %}

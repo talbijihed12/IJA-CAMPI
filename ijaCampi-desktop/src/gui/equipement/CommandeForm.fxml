@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="718.0" style="-fx-background-color: #666769;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.equipement.CommandeFormController">
+   <children>
+      <AnchorPane layoutX="-11.0" layoutY="71.0" prefHeight="651.0" prefWidth="718.0" style="-fx-background-color: #E9EEF7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="37.0" layoutY="87.0" prefHeight="40.0" prefWidth="481.0" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="87.0">
+               <children>
+                  <Label fx:id="lbtype" text="Montant">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfmontant" prefHeight="25.0" prefWidth="185.0" translateX="-78.0">
+                     <HBox.margin>
+                        <Insets left="194.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+                       
+               </children>
+            </HBox>
+            <HBox layoutX="37.0" layoutY="132.0" prefHeight="40.0" prefWidth="508.0" AnchorPane.leftAnchor="37.0">
+               <children>
+                  <Label fx:id="lbmatricule" text="date">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfdate" prefHeight="25.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets left="154.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="37.0" layoutY="172.0" prefHeight="40.0" prefWidth="522.0" AnchorPane.leftAnchor="37.0">
+               <children>
+                  <Label fx:id="lbmarque" text="adresse">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfadresse" prefHeight="25.0" prefWidth="185.0" translateX="-45.0">
+                     <HBox.margin>
+                        <Insets left="174.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="37.0" layoutY="255.0" prefHeight="40.0" prefWidth="481.0" AnchorPane.bottomAnchor="356.0" AnchorPane.leftAnchor="37.0">
+               <children>
+                  <Label fx:id="lbnbrplaces" text="reference">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfreference" prefHeight="25.0" prefWidth="183.0" translateX="30.0">
+                     <HBox.margin>
+                        <Insets left="84.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Line endX="567.0" layoutX="84.0" layoutY="318.0" startX="-72.0" />
+            <TableView fx:id="tableviewmoyen" layoutX="11.0" layoutY="334.0" onKeyTyped="#rechercher" onMouseClicked="#getSelected" prefHeight="245.0" prefWidth="696.0">
+              <columns>
+                <TableColumn fx:id="tvidc" prefWidth="150.0" text="id" />
+                  <TableColumn fx:id="tvmontant" prefWidth="98.0" text="montant" />
+                  <TableColumn fx:id="tvdate" minWidth="0.0" prefWidth="86.0" text="date" />
+                  <TableColumn fx:id="tvadresse" prefWidth="88.0" text="adresse" />
+                  <TableColumn fx:id="tvreference" prefWidth="92.0" text="reference" />
+                  <TableColumn fx:id="tvuserid" prefWidth="181.0" text="utilisateur id" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnliste" layoutX="607.0" layoutY="200.0" mnemonicParsing="false" onAction="#afficher" prefHeight="25.0" prefWidth="72.0" text="Liste" />
+            <HBox layoutX="37.0" layoutY="215.0" prefHeight="40.0" prefWidth="481.0">
+               <children>
+                  <Label fx:id="lbnbrplaces1" text="id client">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfclient" prefHeight="25.0" prefWidth="183.0" translateX="38.0">
+                     <HBox.margin>
+                        <Insets left="84.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TextField fx:id="tfrechercher" alignment="CENTER" layoutX="63.0" layoutY="26.0" onKeyTyped="#rechercher" prefHeight="29.0" prefWidth="268.0" promptText="Rechercher" />
+            <Button fx:id="btrechercher" layoutX="377.0" layoutY="19.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="54.0" styleClass="transparent" stylesheets="@css/style.css">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8-search-60.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnmodifierCommande" layoutX="596.0" layoutY="102.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="94.0" text="Modifier" AnchorPane.topAnchor="102.0" />
+            <Button fx:id="btnsupprimerEquipement" layoutX="594.0" layoutY="152.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="94.0" text="Supprimer" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

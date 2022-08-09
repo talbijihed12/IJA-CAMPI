@@ -1,0 +1,136 @@
+{% extends 'front.html.twig' %}
+{% block title %}Moyen Transport{% endblock %}
+
+
+
+
+{% block body %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+
+    <style>
+	.modal-content iframe{
+            margin: 0 auto;
+            display: block;
+        }
+        .modal-dialog{
+            position: relative;
+            display: table; /* This is important */
+            overflow-y: auto;
+            overflow-x: auto;
+            width: auto;
+            min-width: 300px;
+        }
+    </style>
+	
+	
+    <script>
+	
+	$(document).ready(function(){
+            /* Get iframe src attribute value i.e. YouTube video url
+            and store it in a variable */
+            var url = $("#videoContainer").attr('src');
+
+            /* Assign empty url value to the iframe src attribute when
+            modal hide, which stop the video playing */
+            $("#myModal").on('hide.bs.modal', function(){
+                $("#videoContainer").attr('src', '');
+            });
+
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myModal").on('show.bs.modal', function(){
+                $("#videoContainer").attr('src', url);
+            });
+        });
+		
+		</script>
+
+        <div class="container ">
+        <!-- Modal -->
+        <div class="modal fade " id="myModal" role="dialog">
+            <div class="modal-dialog ">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body overflow-auto">
+                        <iframe id="videoContainer" width="800" height="685" src="{{ path('app_reservation_moyen_transport_new') }}" frameborder="0" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+    </div>
+
+
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card card-solid">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <h3 class="d-inline-block d-sm-none">{{ moyen_transport.frais }} DN</h3>
+                        <div class="col-12">
+                            <img src="{{ asset('images/bus2.png') }}" class="product-image" alt="Product Image">
+                        </div>
+                        
+                        <div class="col-12 product-image-thumbs" hidden>
+                            <div class="product-image-thumb active"><img src="../../dist/img/prod-1.jpg" alt="Product Image"></div>
+                            <div class="product-image-thumb" ><img src="../../dist/img/prod-2.jpg" alt="Product Image"></div>
+                            <div class="product-image-thumb" ><img src="../../dist/img/prod-3.jpg" alt="Product Image"></div>
+                            <div class="product-image-thumb" ><img src="../../dist/img/prod-4.jpg" alt="Product Image"></div>
+                            <div class="product-image-thumb" ><img src="../../dist/img/prod-5.jpg" alt="Product Image"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <h1 class="my-3">{{moyen_transport.frais}}.DT</h1>
+                        <h3 class="my-3">{{moyen_transport.marque}}, {{moyen_transport.matricule}}</h3>
+
+                        <hr>
+                        
+                        <div class="bg-gray py-2 px-3 mt-4">
+                            <h2 class="mb-0">
+                                {{ moyen_transport.type }} de {{ moyen_transport.nbrPlace }} Places 
+                            </h2>
+
+                        </div>
+                        <a  data-toggle="modal" data-target="#myModal" href="{{ path('app_reservation_moyen_transport_new') }}" class="btn btn-primary">
+                        <i></i> Réserver Maintenant </a>
+                        <div class="mt-4 product-share">
+                            <a href="#" class="text-gray">
+                                <i class="fab fa-facebook-square fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray">
+                                <i class="fab fa-twitter-square fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray">
+                                <i class="fas fa-envelope-square fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray">
+                                <i class="fas fa-rss-square fa-2x"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+
+    <div class="text-right">
+        <a href="{{ path('app_moyen_transport_cardsfront') }}" class="btn btn-primary">Retour</a>
+    </div>
+
+{% endblock %}

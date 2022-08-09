@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+
+<br>
+<h4 style="font-size: 2.4rem; font-weight: 100px; color: steelblue; text-align: center"> Les Réservations</h4>
+<br>
+<br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Date Debut</th>
+                <th>Date Fin</th>
+                <th>Place</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation_moyen_transport in reservation_moyen_transports %}
+            <tr>
+            
+                <td>{{ reservation_moyen_transport.dateDebut ? reservation_moyen_transport.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation_moyen_transport.dateFin ? reservation_moyen_transport.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation_moyen_transport.place }}</td>
+                <td>
+                
+                    <a href="{{ path('app_reservation_moyen_transport_edit', {'idReservation': reservation_moyen_transport.idReservation}) }}" class="btn btn-secondary" >Modifier</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

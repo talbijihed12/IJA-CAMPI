@@ -1,0 +1,55 @@
+{% extends 'baseback2.html.twig' %}
+
+
+{% block content %}
+<br>
+<h2 style="color: steelblue; text-align: center"> Gestion utilisateurs</h1>
+<br>
+<br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>prenom</th>
+                <th>DateNaissance</th>
+                <th>Adresse</th>
+                <th> numTel</th>
+                <th> login</th>
+                <th> actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for utilisateur in utilisateurs %}
+            <tr>
+                
+                <td>{{ utilisateur.Nom }}</td>
+                <td>{{ utilisateur.Prenom }}</td>
+                <td>{{ utilisateur.DateNaissance }}</td>
+                <td>{{ utilisateur.Adresse }}</td>
+                <td>{{ utilisateur.numTel }}</td>
+                 <td>{{ utilisateur.login }}</td>
+
+
+
+                <td>
+               <td>
+                    {% if utilisateur.isEnabled %}
+                    <a href="{{ path('user_bloque', {'id': utilisateur.idUser}) }}" class="btn btn-danger">Bloquer</a>
+                    {% else %}
+                    <a href="{{ path('user_debloque', {'id': utilisateur.idUser}) }}" class="btn btn-primary">Debloquer</a>
+                    {% endif %}
+                </td>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+
+
+{% endblock %}

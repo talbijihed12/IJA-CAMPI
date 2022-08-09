@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Eventscene4.gestionevenementclientController">
+   <children>
+      <Pane fx:id="pane" prefHeight="660.0" prefWidth="967.0">
+         <children>
+            <TextField fx:id="filterField" layoutX="438.0" layoutY="45.0" onKeyTyped="#recherche" prefHeight="25.0" prefWidth="261.0" />
+            <Button layoutX="233.0" layoutY="585.0" mnemonicParsing="false" onAction="#Edit" prefHeight="25.0" prefWidth="74.0" text="Modifier" />
+            <TextField fx:id="ddd" visible="false" />
+            <Button layoutX="149.0" layoutY="585.0" mnemonicParsing="false" onAction="#supprimerEvent" prefHeight="25.0" prefWidth="74.0" text="Supprimer" />
+            <Line endX="100.0" endY="352.0" layoutX="290.0" layoutY="273.0" startX="100.0" startY="-236.0" />
+            <DatePicker fx:id="DD" layoutX="174.0" layoutY="361.0" />
+            <DatePicker fx:id="DF" layoutX="174.0" layoutY="409.0" />
+            <ComboBox fx:id="EQ" layoutX="175.0" layoutY="159.0" prefWidth="150.0" />
+            <TextArea fx:id="DESC" layoutX="176.0" layoutY="208.0" prefHeight="133.0" prefWidth="200.0" />
+            <Button layoutX="313.0" layoutY="585.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="74.0" text="Ajouter" />
+            <TextField fx:id="user" layoutX="313.0" layoutY="24.0" visible="false" />
+            <TextField fx:id="NE" layoutX="174.0" layoutY="37.0" />
+            <TextField fx:id="NB" layoutX="176.0" layoutY="459.0" />
+            <TextField fx:id="activite" layoutX="176.0" layoutY="548.0" />
+            <TextField fx:id="prix" layoutX="176.0" layoutY="503.0" />
+            <ComboBox fx:id="tr" layoutX="175.0" layoutY="82.0" prefWidth="150.0" />
+            <ComboBox fx:id="hb" layoutX="175.0" layoutY="120.0" prefWidth="150.0" />
+            <Text layoutX="43.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activités" />
+            <Text layoutX="43.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+            <Text layoutX="42.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres Réservations" />
+            <Text layoutX="42.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fin d'événement" />
+            <Text layoutX="40.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Début d'événement" />
+            <Text layoutX="34.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipement" />
+            <Text layoutX="34.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville" />
+            <Text layoutX="32.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moyen de transport" />
+            <Text layoutX="30.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom d'événement" />
+            <TableView fx:id="RECl" layoutX="438.0" layoutY="95.0" onMouseClicked="#getSelected" prefHeight="492.0" prefWidth="529.0">
+               <columns>
+                  <TableColumn fx:id="nom" prefWidth="75.0" text="Event" />
+                  <TableColumn fx:id="dd" prefWidth="75.0" text="date debut" />
+                  <TableColumn fx:id="df" prefWidth="75.0" text="date fin" />
+                  <TableColumn fx:id="desc" prefWidth="75.0" text="description" />
+                  <TableColumn fx:id="nbrR" prefWidth="79.0" text="nombre réservation" />
+                  <TableColumn fx:id="heb" minWidth="0.0" prefWidth="71.0" text="id_hebergement" visible="false" />
+                  <TableColumn fx:id="tra" prefWidth="75.0" text="id_transport" visible="false" />
+                  <TableColumn fx:id="equip" prefWidth="75.0" text="id_equipement" visible="false" />
+                  <TableColumn fx:id="cprix" prefWidth="81.0" text="prix" />
+                  <TableColumn fx:id="cactivite" prefWidth="69.0" text="activité" />
+                  <TableColumn fx:id="idU" prefWidth="75.0" text="id_utilisateur" visible="false" />
+                  <TableColumn fx:id="df1" prefWidth="75.0" text="date fin" visible="false" />
+                  <TableColumn fx:id="idddd" prefWidth="75.0" text="date fin" visible="false" />
+               </columns>
+            </TableView>
+            <ImageView fitHeight="33.0" fitWidth="38.0" layoutX="711.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_search_30px_1.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="37.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+            <TextField fx:id="u" layoutX="518.0" layoutY="12.0" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

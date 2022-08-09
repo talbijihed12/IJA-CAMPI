@@ -1,0 +1,115 @@
+{% extends 'baseback2.html.twig' %}
+{% block content %}
+    <style>.modal-content iframe{
+            margin: 0 auto;
+            display: block;
+        }
+        .modal-dialog{
+            position: relative;
+            display: table; /* This is important */
+            overflow-y: auto;
+            overflow-x: auto;
+            width: auto;
+            min-width: 300px;
+        }
+    </style>
+    <script>$(document).ready(function(){
+            /* Get iframe src attribute value i.e. YouTube video url
+            and store it in a variable */
+            var url = $("#videoContainer").attr('src');
+
+            /* Assign empty url value to the iframe src attribute when
+            modal hide, which stop the video playing */
+            $("#myModal").on('hide.bs.modal', function(){
+                $("#videoContainer").attr('src', '');
+            });
+
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myModal").on('show.bs.modal', function(){
+                $("#videoContainer").attr('src', url);
+            });
+        });</script>
+    <div class="container ">
+        <!-- Modal -->
+        <div class="modal fade " id="myModal" role="dialog">
+            <div class="modal-dialog ">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body overflow-auto">
+                        <iframe id="videoContainer" width="800" height="685" src="{{ path('app_commande_new') }}" frameborder="0" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+    <div class="card-header">
+
+    <h1>Commande index</h1>
+        <a  data-toggle="modal" data-target="#myModal" href="{{ path('app_commande_new') }}" class="btn btn-app bg-success mt-3">
+            <i  class="fas fa-plus"></i>Ajouter
+        </a>
+    </div>
+    <div class="card-body p-0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Montant</th>
+            <th>Date</th>
+            <th>Adresse</th>
+            <th>Reference</th>
+            <th>Ligne Commande</th>
+            <th>utilisateur</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.id }}</td>
+                <td>{{ commande.montant }}</td>
+                <td>{{ commande.date ? commande.date|date('Y-m-d') : '' }}</td>
+                <td>{{ commande.adresse }}</td>
+                <td>{{ commande.reference }}</td>
+                <td class="project-actions text-left">
+                    <a class="btn btn-primary btn-sm" href="{{ path('cart_show_commande', {'id': commande.id}) }}">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                    </a>
+                <td>{{ commande.idUtilisateur }}</td>
+                <td class="project-actions text-left">
+
+                    <a class="btn btn-info btn-sm" href="{{ path('app_commande_edit', {'id': commande.id}) }}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="{{ path('app_commande_del',{'id':commande.id}) }}">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <a hidden href="{{ path('app_commande_new') }}">Create new</a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" prefHeight="633.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.transport.MoyenTransportFormController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="938.0" style="-fx-background-color: #666769;">
+         <children>
+            <AnchorPane prefHeight="633.0" prefWidth="1038.0" style="-fx-background-color: #E9EEF7;">
+               <children>
+                  <HBox layoutX="198.0" layoutY="56.0" prefHeight="40.0" prefWidth="555.0" AnchorPane.leftAnchor="198.0" AnchorPane.topAnchor="56.0">
+                     <children>
+                        <Label fx:id="lbtype" text="Type">
+                           <font>
+                              <Font name="Bell MT" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="6.0" top="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="combobox" prefHeight="25.0" prefWidth="184.0" promptText="....">
+                           <HBox.margin>
+                              <Insets left="200.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                             
+                     </children>
+                  </HBox>
+                  <HBox layoutX="198.0" layoutY="95.0" prefHeight="40.0" prefWidth="555.0" AnchorPane.leftAnchor="198.0">
+                     <children>
+                        <Label fx:id="lbmatricule" text="Matricule">
+                           <font>
+                              <Font name="Bell MT" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="6.0" top="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tfmatricule" prefHeight="25.0" prefWidth="185.0">
+                           <HBox.margin>
+                              <Insets left="162.0" top="6.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="198.0" layoutY="136.0" prefHeight="40.0" prefWidth="555.0" AnchorPane.leftAnchor="198.0">
+                     <children>
+                        <Label fx:id="lbmarque" text="Marque">
+                           <font>
+                              <Font name="Bell MT" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="6.0" top="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tfmarque" prefHeight="25.0" prefWidth="185.0">
+                           <HBox.margin>
+                              <Insets left="178.0" top="6.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="192.0" layoutY="231.0" prefHeight="40.0" prefWidth="555.0" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="192.0">
+                     <children>
+                        <Label fx:id="lbnbrplaces" text="Nombre de Places">
+                           <font>
+                              <Font name="Bell MT" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="6.0" top="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tfnbrplaces" prefHeight="25.0" prefWidth="183.0">
+                           <HBox.margin>
+                              <Insets left="96.0" top="6.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Line endX="744.0" layoutX="109.0" layoutY="301.0" startX="-72.0" />
+                  <TableView fx:id="tableviewmoyen" layoutX="78.0" layoutY="327.0" onKeyTyped="#rechercher" onMouseClicked="#getSelected" prefHeight="244.0" prefWidth="753.0">
+                    <columns>
+                      <TableColumn fx:id="tvtype" prefWidth="119.00001525878906" text="Type" />
+                      <TableColumn fx:id="tvmatricule" prefWidth="140.0" text="Matricule" />
+                        <TableColumn fx:id="tvmarque" prefWidth="110.0" text="Marque" />
+                        <TableColumn fx:id="tvnbrplaces" prefWidth="127.0" text="Nombre de Places" />
+                        <TableColumn fx:id="tvfrais" prefWidth="200.0" text="Frais" />
+                        <TableColumn fx:id="clNomUser" prefWidth="78.0" text="Nom User" visible="false" />
+                        <TableColumn fx:id="clId" minWidth="0.0" prefWidth="0.0" text="ID" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnajoutermoyentransport" layoutX="782.0" layoutY="47.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8-add-64%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnmodifiermoyentransport" layoutX="782.0" layoutY="94.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: transparent;" AnchorPane.topAnchor="94.0">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8-renew-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnsupprimermoyentransport" layoutX="793.0" layoutY="147.0" mnemonicParsing="false" onAction="#supprimer" style="-fx-background-color: transparent;" AnchorPane.topAnchor="147.0">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8-delete-document-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="tfId" layoutX="211.0" layoutY="31.0" prefHeight="25.0" prefWidth="31.0" />
+                  <Button fx:id="btnliste" layoutX="782.0" layoutY="189.0" mnemonicParsing="false" onAction="#afficher" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8-show-property-80.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <HBox layoutX="192.0" layoutY="183.0" prefHeight="40.0" prefWidth="555.0">
+                     <children>
+                        <Label fx:id="lbnbrplaces1" text="Frais">
+                           <font>
+                              <Font name="Bell MT" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="6.0" top="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tffrais" prefHeight="25.0" prefWidth="183.0">
+                           <HBox.margin>
+                              <Insets left="200.0" top="6.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="tfIduser" layoutX="117.0" layoutY="35.0" prefHeight="25.0" prefWidth="31.0" />
+                  <ImageView fitHeight="28.0" fitWidth="21.0" layoutX="678.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8-search-60.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="tfrechercher" alignment="CENTER" layoutX="398.0" layoutY="17.0" onKeyTyped="#rechercher" prefHeight="29.0" prefWidth="268.0" promptText="Rechercher" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="btrechercher" layoutX="697.0" layoutY="51.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="54.0" styleClass="transparent" stylesheets="@css/style.css" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

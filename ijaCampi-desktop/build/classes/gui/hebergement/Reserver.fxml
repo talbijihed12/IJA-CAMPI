@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.hebergement.ReserverController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="69.0" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@reserver.css" />
+          </stylesheets>
+         <children>
+            <Label layoutX="35.0" layoutY="128.0" prefHeight="72.0" prefWidth="158.0" text="Date de début :" />
+            <Label layoutX="43.0" layoutY="254.0" prefHeight="72.0" prefWidth="158.0" text="Date de fin :" />
+            <Text layoutX="152.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reserver un hébergement" wrappingWidth="295.72265625">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="ddid" layoutX="133.0" layoutY="152.0" />
+            <DatePicker fx:id="dfid" layoutX="133.0" layoutY="278.0" />
+            <Button fx:id="comfirmerid" layoutX="407.0" layoutY="188.0" mnemonicParsing="false" onAction="#reserver" prefHeight="59.0" prefWidth="133.0" text="Comfirmer" />
+            <TextField fx:id="idid" layoutX="367.0" layoutY="-69.0" />
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="user" layoutX="56.0" layoutY="14.0" visible="false" />
+      <TextField fx:id="nomh" layoutX="56.0" layoutY="27.0" visible="false" />
+   </children>
+</Pane>

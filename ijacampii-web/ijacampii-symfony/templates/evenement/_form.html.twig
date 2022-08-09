@@ -1,0 +1,72 @@
+{%block body%}
+
+    {{ form_start(form,{attr:{'novalidate':'novalidate'}}) }}
+    {{ form_widget(form) }}
+
+    <div>
+        <table>
+            <tr>
+
+                <td> {{form_widget(form.nomEvent)}} </td>
+                <td> {{form_errors(form.nomEvent)}} </td>
+            </tr>
+            <tr>
+
+                <td> {{form_widget(form.description)}} </td>
+                <td> {{form_errors(form.description)}} </td>
+            </tr>
+            </tr>
+            <tr>
+
+                <td> {{form_widget(form.dateDebut)}} </td>
+                <td> {{form_errors(form.dateDebut)}} </td>
+            </tr>
+            </tr>
+            <tr>
+
+                <td> {{form_widget(form.dateFin)}} </td>
+                <td> {{form_errors(form.dateFin)}} </td>
+            </tr>
+            </tr>
+            <tr>
+
+                <td> {{form_widget(form.nbrReservation)}} </td>
+                <td> {{form_errors(form.nbrReservation)}} </td>
+            </tr>
+            </tr>
+            <tr>
+
+                <td> {{form_widget(form.prix)}} </td>
+                <td> {{form_errors(form.prix)}} </td>
+            </tr>
+            </tr>
+            <tr>
+
+                <td> {{form_widget(form.activite)}} </td>
+                <td> {{form_errors(form.activite)}} </td>
+            </tr>
+            </tr>
+            <tr>
+                <td> {{form_widget(form.idHebergement)}} </td>
+                <td> {{form_errors(form.idHebergement)}} </td>
+            </tr>
+
+            </tr>
+            <tr>
+                <td> {{form_widget(form.idEquipement)}} </td>
+                <td> {{form_errors(form.idEquipement)}} </td>
+            </tr>
+            </tr>
+            <tr>
+                <td> {{form_widget(form.idTransport)}} </td>
+                <td> {{form_errors(form.idTransport)}} </td>
+            </tr>
+            </tr>
+
+            </tr>
+        </table>
+        <button class="btn btn-primary">{{ button_label|default('Create') }}</button> <br>
+    </div>
+    {{ form_end(form) }}
+{%endblock%}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.hebergement.MesReservationsController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@listehebergement.css" />
+          </stylesheets>
+         <children>
+            <TableView fx:id="tableid" layoutY="72.0" onMouseClicked="#clickItem" prefHeight="328.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="nomhid" prefWidth="180.0" text="Nom Hebergement" />
+                <TableColumn fx:id="ddid" prefWidth="203.0" text="Date de début" />
+                  <TableColumn fx:id="dfid" prefWidth="216.0" text="Date de Fin" />
+              </columns>
+            </TableView>
+            <TextField fx:id="filterField" layoutX="93.0" layoutY="30.0" prefHeight="25.0" prefWidth="414.0" />
+            <Pane prefHeight="25.0" prefWidth="79.0" />
+            <TextField fx:id="user" layoutX="33.0" layoutY="13.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

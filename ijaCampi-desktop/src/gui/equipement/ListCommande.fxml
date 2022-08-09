@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="661.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.equipement.ListCommandeController">
+    <stylesheets>
+        <URL value="@listcommande.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tvLc" layoutX="33.0" layoutY="99.0" prefHeight="216.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="tvid" prefWidth="70.0" text="id" />
+          <TableColumn fx:id="tveq" prefWidth="172.0" text="equipement" />
+            <TableColumn fx:id="tvfc" prefWidth="125.0" text="commande" />
+            <TableColumn fx:id="tvfq" prefWidth="210.0" text="quantite" />
+        </columns>
+      </TableView>
+      <Label layoutX="40.0" layoutY="43.0" text="Commande">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font></Label>
+      <Button fx:id="btnajouter" layoutX="33.0" layoutY="513.0" mnemonicParsing="false" onAction="#ajouterCommande" text="commander" />
+      <Label fx:id="reflabel" layoutX="230.0" layoutY="56.0" prefHeight="21.0" prefWidth="47.0" text="ref" />
+      <Label layoutX="33.0" layoutY="383.0" text="Adresse de livraison" />
+      <TextField fx:id="labeladresse" layoutX="33.0" layoutY="425.0" prefHeight="31.0" prefWidth="628.0" />
+      <Label layoutX="520.0" layoutY="344.0" text="Total" />
+      <Label fx:id="labelvtot" layoutX="579.0" layoutY="342.0" text="Label" />
+      <Button fx:id="show" layoutX="557.0" layoutY="54.0" mnemonicParsing="false" onAction="#afficher" text="show" />
+      <TextField fx:id="idcommande" layoutX="67.0" layoutY="327.0" visible="false" />
+   </children>
+</AnchorPane>

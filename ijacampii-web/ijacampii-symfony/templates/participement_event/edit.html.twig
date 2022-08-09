@@ -1,0 +1,19 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}Edit ParticipementEvent{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {{ form_start(form,{attr:{'novalidate':'novalidate'}}) }}
+    <h1>Edit ParticipementEvent</h1>
+
+    {{ include('participement_event/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_participement_event_index') }}"><button style="display: inline-block" data-bs-dismiss="modal" type="submit"
+                                                                  class="btn btn-primary">Back to list</button></a>
+    {{ include('participement_event/_delete_form.html.twig') }}
+{% endblock %}

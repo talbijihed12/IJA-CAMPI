@@ -1,0 +1,42 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Reservationsimple index{% endblock %}
+
+{% block content %}
+    <h1>Reservationsimple index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdRs</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Namehebergement</th>
+                <th>UserId</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservationsimple in reservationsimples %}
+            <tr>
+                <td>{{ reservationsimple.idRs }}</td>
+                <td>{{ reservationsimple.datedebut ? reservationsimple.datedebut|date('Y-m-d') : '' }}</td>
+                <td>{{ reservationsimple.datefin ? reservationsimple.datefin|date('Y-m-d') : '' }}</td>
+                <td>{{ reservationsimple.namehebergement }}</td>
+                <td>{{ reservationsimple.userId }}</td>
+                <td>
+                    <a href="{{ path('app_reservationsimple_show', {'idRs': reservationsimple.idRs}) }}">show</a>
+                    <a href="{{ path('app_reservationsimple_edit', {'idRs': reservationsimple.idRs}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        {{ knp_pagination_render(reservationsimples) }}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="718.0" style="-fx-background-color: #666769;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.equipement.EquipementFormController">
+   <children>
+      <AnchorPane layoutX="-11.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="718.0" style="-fx-background-color: #E9EEF7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="25.0" layoutY="72.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="72.0">
+               <children>
+                  <Label fx:id="lbtype" text="nom">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfnom" prefHeight="25.0" prefWidth="185.0" />
+               </children></HBox>
+            <HBox layoutX="18.0" layoutY="116.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="18.0">
+               <children>
+                  <Label fx:id="lbmatricule" text="description">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfdescription" prefHeight="25.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets left="154.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="25.0" layoutY="172.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="25.0">
+               <children>
+                  <Label fx:id="lbmarque" text="marque">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfmarque" prefHeight="25.0" prefWidth="185.0" translateX="-45.0">
+                     <HBox.margin>
+                        <Insets left="174.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="18.0" layoutY="297.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.bottomAnchor="314.0" AnchorPane.leftAnchor="18.0">
+               <children>
+                  <Label fx:id="lbnbrplaces" text="categorie">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfcategie" prefHeight="25.0" prefWidth="183.0" translateX="30.0">
+                     <HBox.margin>
+                        <Insets left="84.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Line endX="593.0" layoutX="114.0" layoutY="347.0" startX="-100.0" />
+            <TableView fx:id="tableviewmoyen" layoutX="14.0" layoutY="358.0" onKeyTyped="#rechercher" onMouseClicked="#getSelected" prefHeight="258.0" prefWidth="694.0">
+              <columns>
+                <TableColumn fx:id="tvnom" prefWidth="107.0" text="nom" />
+                <TableColumn fx:id="tvdescription" prefWidth="128.0" text="description" />
+                  <TableColumn fx:id="tvmarque" prefWidth="85.0" text="marque" />
+                  <TableColumn fx:id="tvprix" prefWidth="117.0" text="prix" />
+                  <TableColumn fx:id="tvphoto" prefWidth="120.0" text="photo" />
+                  <TableColumn fx:id="tvcategorie" prefWidth="135.0" text="categorie" />
+                  <TableColumn fx:id="tvid" prefWidth="135.0" text="id" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnajouterCommande" layoutX="616.0" layoutY="28.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="25.0" prefWidth="72.0" text="Ajouter" />
+            <Button fx:id="btnmodifierCommande" layoutX="616.0" layoutY="72.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="72.0" text="Modifier" AnchorPane.topAnchor="72.0" />
+            <Button fx:id="btnliste" layoutX="616.0" layoutY="156.0" mnemonicParsing="false" onAction="#afficher" prefHeight="25.0" prefWidth="72.0" text="Liste" />
+            <Button fx:id="btnsupprimerEquipement" layoutX="616.0" layoutY="116.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
+            <HBox layoutX="18.0" layoutY="217.0" prefHeight="40.0" prefWidth="615.0">
+               <children>
+                  <Label fx:id="lbnbrplaces1" text="prix">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfprix" prefHeight="25.0" prefWidth="183.0" translateX="38.0">
+                     <HBox.margin>
+                        <Insets left="84.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="18.0" layoutY="257.0" prefHeight="40.0" prefWidth="615.0">
+               <children>
+                  <Label fx:id="lbmarque1" text="photo">
+                     <font>
+                        <Font name="Bell MT Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tfphoto" prefHeight="25.0" prefWidth="185.0" translateX="-45.0">
+                     <HBox.margin>
+                        <Insets left="174.0" top="6.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TextField fx:id="tfrechercher" alignment="CENTER" layoutX="124.0" layoutY="14.0" onKeyTyped="#rechercher" prefHeight="29.0" prefWidth="268.0" promptText="Rechercher" />
+            <Button fx:id="btrechercher" layoutX="415.0" layoutY="14.0" mnemonicParsing="false" onAction="#rechercher" prefHeight="40.0" prefWidth="54.0" styleClass="transparent" stylesheets="@css/style.css">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8-search-60.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TextField fx:id="tfid" layoutX="295.0" layoutY="56.0" prefHeight="25.0" prefWidth="185.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

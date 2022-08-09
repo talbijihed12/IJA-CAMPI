@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="400.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.transport.ReservationFormController">
+    
+    <children>
+      <AnchorPane fx:id="apres" layoutX="50.0" layoutY="126.0" prefHeight="600.0" prefWidth="380.0" style="-fx-background-color: #E9EEF7;">
+         <children>
+            <HBox layoutX="198.0" layoutY="136.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="198.0">
+               <children>
+                  <Label fx:id="lbdatedebut" text="Date Début">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="tfdatedebut">
+                     <HBox.margin>
+                        <Insets left="160.0" top="6.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+            <HBox layoutX="198.0" layoutY="196.0" prefHeight="40.0" prefWidth="615.0" AnchorPane.leftAnchor="198.0">
+               <children>
+                  <Label fx:id="lbdatefin" text="Date Fin">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="6.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="tfdatefin">
+                     <HBox.margin>
+                        <Insets left="184.0" top="6.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+            <TextField fx:id="tfId" layoutX="38.0" layoutY="76.0" prefHeight="25.0" prefWidth="36.0" />
+            <Button fx:id="btnreserver" layoutX="349.0" layoutY="344.0" mnemonicParsing="false" onAction="#reserver" prefHeight="40.0" prefWidth="96.0" text="Réserver" />
+            <HBox layoutX="159.0" prefHeight="100.0" prefWidth="525.0" />
+            <Label layoutX="209.0" layoutY="255.0" text="où?">
+               <font>
+                  <Font name="Bell MT" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfplace" layoutX="458.0" layoutY="258.0" />
+            <Button fx:id="btnmesRes" layoutX="518.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#ReservationListClientForm" prefHeight="40.0" prefWidth="136.0" text="Mes Reservations" />
+         </children>
+      </AnchorPane>
+   </children>
+    
+</AnchorPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.hebergement.DetailsHebergementController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@detailshebergement.css" />
+          </stylesheets>
+         <children>
+            <Text layoutX="122.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="39.0" />
+               </font>
+            </Text>
+            <Label layoutX="21.0" layoutY="99.0" text="Ville:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="148.0" text="Catégorie:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="198.0" text="Capacitée:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="242.0" text="Disponibilitée:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="286.0" text="Prix:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="47.0" text="Nom:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameid2" layoutX="103.0" layoutY="54.0" />
+            <TextField fx:id="villeid2" layoutX="103.0" layoutY="106.0" />
+            <TextField fx:id="categorieid2" layoutX="145.0" layoutY="155.0" />
+            <TextField fx:id="capaciteid2" layoutX="145.0" layoutY="205.0" />
+            <TextField fx:id="disponibiliteid2" layoutX="191.0" layoutY="249.0" />
+            <TextField fx:id="prixid2" layoutX="84.0" layoutY="293.0" />
+            <Button fx:id="modifier" layoutX="412.0" layoutY="80.0" mnemonicParsing="false" onAction="#modifierHebergement" prefHeight="52.0" prefWidth="136.0" text="Modifier" />
+            <Button fx:id="supprimer" layoutX="412.0" layoutY="236.0" mnemonicParsing="false" onAction="#supprimerHebergement" prefHeight="52.0" prefWidth="136.0" text="Suppprimer" />
+            <TextField fx:id="nameid1" layoutX="103.0" layoutY="54.0" />
+            <TextField fx:id="villeid1" layoutX="103.0" layoutY="106.0" />
+            <TextField fx:id="categorieid1" layoutX="145.0" layoutY="155.0" />
+            <TextField fx:id="capaciteid1" layoutX="145.0" layoutY="205.0" />
+            <TextField fx:id="disponibiliteid1" layoutX="191.0" layoutY="249.0" />
+            <TextField fx:id="prixid1" layoutX="84.0" layoutY="293.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

@@ -1,0 +1,49 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}Moyen Transport{% endblock %}
+
+{% block body %}
+
+<br>
+<h4 style="font-size: 2.4rem; font-weight: 100px; color: steelblue; text-align: center"> Gestion Transport</h4>
+<br>
+<br>
+
+    <table class="table">
+        <tbody>
+            
+            <tr>
+                <th>Type</th>
+                <td>{{ moyen_transport.type }}</td>
+            </tr>
+            <tr>
+                <th>Matricule</th>
+                <td>{{ moyen_transport.matricule }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ moyen_transport.marque }}</td>
+            </tr>
+            <tr>
+                <th>Nombre des Places</th>
+                <td>{{ moyen_transport.nbrPlace }}</td>
+            </tr>
+            <tr>
+                <th>Frais</th>
+                <td>{{ moyen_transport.frais }}</td>
+            </tr>
+            
+            <tr>
+                <th></th>
+                <td>
+                    <a href="{{ path('app_moyen_transport_edit', {'idTransport': moyen_transport.idTransport}) }}" class="btn btn-secondary">Modifier</a>
+                    <form method="post" action="{{ path('app_moyen_transport_delete', {'idTransport': moyen_transport.idTransport}) }}" style="display: inline-block" onsubmit="return confirm('Vous Êtes sûr de réfiser cette Réservation? ');">
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ moyen_transport.idTransport) }}">
+                       <button class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

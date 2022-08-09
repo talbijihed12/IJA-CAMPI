@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.hebergement.ListeHebergementController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@listehebergement.css" />
+          </stylesheets>
+         <children>
+            <TableView fx:id="tableid" layoutY="72.0" onMouseClicked="#clickItem" prefHeight="328.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="nameid" prefWidth="110.0" text="Nom" />
+                <TableColumn fx:id="villeid" prefWidth="120.0" text="Ville" />
+                  <TableColumn fx:id="categorieid" prefWidth="165.0" text="Catégorie" />
+                  <TableColumn fx:id="capaciteid" minWidth="1.0" prefWidth="71.0" text="Capacitée" />
+                  <TableColumn fx:id="disponibiliteid" prefWidth="85.0" text="Disponibilitée" />
+                  <TableColumn fx:id="prixid" prefWidth="48.0" text="Prix" />
+              </columns>
+            </TableView>
+            <TextField fx:id="filterField" layoutX="93.0" layoutY="30.0" prefHeight="25.0" prefWidth="414.0" />
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <TextField fx:id="user" layoutX="437.0" layoutY="5.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

@@ -1,0 +1,66 @@
+{% extends 'basefront.html.twig' %}
+
+
+
+{% block body %}
+<br>
+<h4 style="font-size: 2.4rem; font-weight: 100px; color: steelblue; text-align: center"> Profile </h4>
+<br>
+<br>
+
+
+    <div class="card-body table-responsive p-0">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Prenom</th>
+                      <th>DateNaissance</th>
+                      <th>Adresse</th>
+                     <th>NumTel</th>
+                     <th> login</th>
+                                          <th>actions</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for utilisateur in utilisateurs %}
+                 <tr>
+                
+                <td>{{ utilisateur.nom }}</td>
+                <td>{{ utilisateur.prenom }}</td>
+                        <td>{{ utilisateur.DateNaissance }}</td>
+                <td>{{ utilisateur.adresse }}</td>
+
+                <td>{{ utilisateur.numTel }}</td>
+                  <td>{{ utilisateur.Login }}</td>
+
+
+
+                <td>  <a href="{{ path('app_utilisateurs_edit', {'idUser': utilisateur.idUser}) }}" class="btn btn-secondary">Edit</a>
+
+                    <a href="{{ path('app_utilisateurs_show', {'idUser': utilisateur.idUser}) }}" class="btn btn-secondary" >Afficher</a>
+                    <form method="post" action="{{ path('app_utilisateurs_deletefront', {'idUser': utilisateur.idUser}) }}" style="display: inline-block" onsubmit="return confirm('Vous Êtes sûr de Supprimer cet utilisateur ')";>
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ utilisateur.idUser) }}">
+                       <button class="btn btn-danger">Delete</button>
+                    </form>
+                    
+                </td>
+                 </tr>
+               {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+                {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+   
+    </table>
+<div class="text-right">
+    <a href="{{ path('app_utilisateurs_new') }}" class="btn btn-primary">Ajouter</a>
+    </div>
+
+   
+    
+{% endblock %}

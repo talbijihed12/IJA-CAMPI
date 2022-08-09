@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="tvId" prefHeight="600.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.transport.ReservationListClientFormController">
+   <children>
+      <TableView fx:id="tableReservation" layoutX="25.0" layoutY="197.0" onMouseClicked="#getSelected" prefHeight="289.0" prefWidth="291.0">
+        <columns>
+          <TableColumn fx:id="tvdatedebut" prefWidth="87.0" text="Date Debut" />
+          <TableColumn fx:id="tvdatefin" prefWidth="113.0" text="Date Fin" />
+            <TableColumn fx:id="tvplace" prefWidth="90.0" text="Place" />
+            <TableColumn fx:id="tvIduser" prefWidth="90.0" text="id" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnmodifier" layoutX="89.0" layoutY="514.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+      <Button fx:id="btnannuler" layoutX="171.0" layoutY="514.0" mnemonicParsing="false" onAction="#supprimer" text="Annuler" />
+      <TextField fx:id="tfIdres" layoutX="15.0" layoutY="14.0" prefHeight="25.0" prefWidth="33.0" />
+      <TextField fx:id="tfplace" layoutX="85.0" layoutY="128.0" prefHeight="25.0" prefWidth="174.0" promptText="Place" />
+      <DatePicker fx:id="pickerdd" layoutX="84.0" layoutY="45.0" promptText="Date Debut" />
+      <DatePicker fx:id="pickerdf" layoutX="85.0" layoutY="89.0" promptText="Date Fin" />
+   </children>
+</AnchorPane>

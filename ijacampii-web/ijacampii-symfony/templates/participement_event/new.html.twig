@@ -1,0 +1,47 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}New Participement Event{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <h1>Create new Participement Event</h1>
+    {{ form_start(form,{attr:{'novalidate':'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <div>
+            <table>
+                <tr>
+
+                    <td> {{form_widget(form.nbrParticipement)}} </td>
+                    <td> {{form_errors(form.nbrParticipement)}} </td>
+                </tr>
+
+                </tr>
+                <tr>
+
+                    <td> {{form_widget(form.idEvent)}} </td>
+                    <td> {{form_errors(form.idEvent)}} </td>
+                </tr>
+                </tr>
+            </table>
+        </div>
+<td>
+     <a href="href="{{ path('app_evenement_indexfront') }}""><button class="btn" >{{ button_label|default('Save') }}</button></a>
+    {{ form_end(form) }}
+
+
+    <a href="{{ path('app_evenement_indexfront')}}" class="btn btn-secondary" >Back to list</a>
+</td>
+    <script type="text/javascript">
+        var vsid = "kc24347452b1f83";
+        (function() {
+            var vsjs = document.createElement('script'); vsjs.type = 'text/javascript'; vsjs.async = true; vsjs.setAttribute('defer', 'defer');
+            vsjs.src = 'https://www.leadchatbot.com/vsa/chat.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vsjs, s);
+        })();
+    </script>
+{% endblock %}

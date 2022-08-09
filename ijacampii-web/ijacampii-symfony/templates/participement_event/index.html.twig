@@ -1,0 +1,132 @@
+{% extends 'baseback2.html.twig' %}
+
+{% block title %}ParticipementEvent index{% endblock %}
+
+{% block body %}
+    <h1>Participements</h1>
+    <input type="text" id="search" class="form-control form-control-no-border mr-sm-2" placeholder="Search Participement">
+
+    <table class="table" id="tableac">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th onclick="sortTable(0)">number of Participement</th>
+                <th>Participants</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for participement_event in participement_events %}
+        {% for evenement in evenements %}
+            {% for utilisateurs in utilisateurs %}
+
+                <tr>
+                    <td>{{ evenement.nomEvent }}</td>
+                <td>{{ participement_event.nbrParticipement }}</td>
+                <td>{{ utilisateurs.prenom }}</td>
+                <td>
+                    <a href="{{ path('app_participement_event_show', {'idParticipement': participement_event.idParticipement}) }}">show</a>
+
+                </td>
+            </tr>
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+
+
+
+        </tbody>
+    </table>
+
+    <div>{{ knp_pagination_render(participement_events) }}</div>
+
+    <script src="{{ asset('jquery.min.js') }}"></script>
+    <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("tableac");
+            switching = true;
+            // Set the sorting direction to ascending:
+            dir = "asc";
+            /* Make a loop that will continue until
+            no switching has been done: */
+            while (switching) {
+                // Start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /* Loop through all table rows (except the
+                first, which contains table headers): */
+                for (i = 1; i < (rows.length - 1); i++) {
+                    // Start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /* Get the two elements you want to compare,
+                    one from current row and one from the next: */
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /* Check if the two rows should switch place,
+                    based on the direction, asc or desc: */
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+
+                    switchcount ++;
+                } else {
+                    /* If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again. */
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#tableac tbody tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found == 'true')
+                    {
+                        $(this).show();
+
+                    }
+                    else
+                    {
+                        $(this).hide();
+
+                    }
+                });
+            }
+        });
+    </script>
+
+
+{% endblock %}

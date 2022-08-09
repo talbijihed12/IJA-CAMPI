@@ -1,0 +1,51 @@
+
+{{ block("css", "baseback.html.twig") }}
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<div class="card card-primary ">
+    <div class="card-header">
+        <h3 class="card-title">equipement</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+
+        <div class="card-body">
+
+            <div class="form-group w-25">
+                {{ form_row(form.nom) }}
+            </div>
+
+            <div class="form-group w-50">
+                {{ form_row(form.description) }}
+            </div>
+
+            <div class="form-group w-25">
+                {{ form_row(form.photo) }}
+            </div>
+            <div class="form-group w-25">
+                {{ form_row(form.marque) }}
+            </div>
+            <div class="form-group w-25">
+                {{ form_row(form.categorie) }}
+            </div>
+            <div class="form-group w-25">
+                {{ form_row(form.prix) }}
+            </div>
+            <div class="form-group w-25" hidden>
+                {{ form_row(form.idUtilisateur) }}
+            </div>
+            <div class="form-group w-25" hidden>
+                {{ form_row(form.idEvenement) }}
+            </div>
+
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+</div>
+{{ form_rest(form) }}
+{{ form_end(form) }}

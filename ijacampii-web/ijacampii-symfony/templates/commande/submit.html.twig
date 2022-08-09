@@ -1,0 +1,40 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<div class="card card-primary ">
+    <div class="card-header">
+        <h3 class="card-title">commande</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+        <div class="card-body" >
+            <div class="form-group w-25" hidden>
+                {{ form_row(form.reference) }}
+            </div>
+            <div class="form-group w-25" hidden>
+                {{ form_row(form.montant) }}
+            </div>
+
+
+            <div class="form-group w-25">
+                {{ form_row(form.adresse) }}
+            </div>
+            <div class="form-group w-25" hidden>
+                {{ form_row(form.idUtilisateur) }}
+            </div>
+            <div class="form-group w-25" >
+                {{ form_row(form.captchaCode) }}
+            </div>
+
+
+        </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+{{ form_rest(form) }}
+{{ form_end(form) }}
+{% endblock %}
